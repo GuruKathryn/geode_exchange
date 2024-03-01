@@ -1,0 +1,23 @@
+[package]
+name = "geode_private_exchange"
+description = "A contract for listing crytocurrencies for private sale on the Geode network."
+version = "0.2.0"
+authors = ["Dr. Amy Messegee <support@blockandpurpose.com>"]
+edition = "2021"
+
+[dependencies]
+ink = { version = "5.0.0-rc.1", default-features = false }
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
+scale-info = { version = "2.6", default-features = false, features = ["derive"], optional = true }
+
+[lib]
+path = "lib.rs"
+
+[features]
+default = ["std"]
+std = [
+    "ink/std",
+    "scale/std",
+    "scale-info/std",
+]
+ink-as-dependency = []
